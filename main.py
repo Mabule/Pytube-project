@@ -11,10 +11,11 @@ if ext != "mp3" and ext != "mp4":
     while ext != "mp3" and ext != "mp4":
         ext = str(input(f"Je {'re '*i}répète, tu veux un fichier mp3 ou mp4 ?"))
         i = i + 1
+user = str(os.environ["USERNAME"])
 if ext == "mp3":
-    path = 'C:/Users/drake/Music/musique'
+    path = f'C:/Users/{user}/Music'
 elif ext == "mp4":
-    path = 'C:/Users/drake/Videos'
+    path = f'C:/Users/{user}/Videos'
 print(f"{name} en cours de téléchargement ...")
 yt.streams.first().download(path)
 if ext == "mp3":
